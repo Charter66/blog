@@ -2,7 +2,7 @@
   "name": "my-blog",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://ephemeral-brigadeiros-4f959a.netlify.app/",
+  "proxy": "http://localhost:3000/",  
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

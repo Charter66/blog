@@ -30,7 +30,7 @@ const ArticlePage = () =>{
 
          }
 
-     },[isLoading, user, articleId]);
+     },[]);
 
      const addUpvote = async () => {
             const token = user && await user.getIdToken();
@@ -51,7 +51,7 @@ const ArticlePage = () =>{
         <div className="upvotes-section">
         {user ? <button onClick={addUpvote}>{canUpvote ? 'Upvote'  : 'Already Upvoted'}</button> 
         : <button>Log in to upvote</button> }    
-            <p>This article has {articleInfo.upvotes} upvote(s)</p>
+            <p>This article has {articleInfo && articleInfo.upvotes} upvote(s)</p>
         </div>
         {article.content.map((paragraph, i) =>(
             <p key={i}>{paragraph}</p>
