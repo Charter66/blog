@@ -11,7 +11,7 @@ const AddCommentForm = ({articleName, onArticleUpdated})=>{
     const AddComment = async()=>{
         const token = user && await user.getIdToken();
         const headers = token ? {authToken: token} : {};
-        const response = await axios.post(`/api/articles/${articleName}/comments`,{
+        const response = await axios.post(`https://blog-fze5.onrender.com/api/articles/${articleName}/comments`,{
             postedBy: name,
             text:commentText,
         }, {headers});

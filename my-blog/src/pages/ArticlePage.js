@@ -36,7 +36,7 @@ const ArticlePage = () =>{
             const token = user && await user.getIdToken();
             const headers = token ? {authToken: token} : {};
 
-            const response = await axios.put(`/api/articles/${articleId}/upvote`, null, {headers}) 
+            const response = await axios.put(`https://blog-fze5.onrender.com/api/articles/${articleId}/upvote`, null, {headers}) 
             const updatedArticle = response.data;
             setArticleInfo(updatedArticle);
      }
