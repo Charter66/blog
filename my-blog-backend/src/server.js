@@ -42,16 +42,8 @@ app.use(async(req,res, next )=> {
 req.user = req.user || {};
     next();
 });
-app.get('/api/articles/:name/comment', async(req, res) => {
-    const {name} =req.params
-    const comments = await db.collection('articles').findAll({name});
 
-    if(comments){
-        res.json(comments)
-        console.log(comments)
-    }
-})
-app.get('/api/articles/:name', async(req, res) => {
+app.get('   ', async(req, res) => {
     const {name}=req.params;
     const {uid} = req.user;
     

@@ -30,7 +30,7 @@ const ArticlePage = () =>{
 
          }
 
-     },[isLoading, user, articleId]);
+     },[articleId]);
 
      const addUpvote = async () => {
             const token = user && await user.getIdToken();
@@ -62,7 +62,7 @@ const ArticlePage = () =>{
         articleName={articleId}
         onArticleUpdated={updatedArticle=>setArticleInfo(updatedArticle)}
          /> : <button>Log in to add a comment</button> } 
-        <CommentsList comments={articleInfo.comments} />
+        {articleId && <CommentsList comments={articleInfo.comments} articleId={articleId} /> }
         </>
     
     )
