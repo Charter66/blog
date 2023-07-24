@@ -18,9 +18,9 @@ const credentials = JSON.parse(fs.readFileSync(credentialsFilePath, 'utf8'));
         credential : admin.credential.cert(credentials),
     });
 const app = express();
-app.use(cors());
 
 app.use(express.json());
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../build')));
 
@@ -126,7 +126,7 @@ app.delete('/api/articles/:name/comments/:postedBy', async (req, res) => {
     }
 });
 
-const PORT =  "https://ephemeral-brigadeiros-4f959a.netlify.app/";
+const PORT =  3000;
 
 connectToDb(()=>{
 
