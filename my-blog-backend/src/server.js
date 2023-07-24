@@ -1,4 +1,4 @@
-
+import cors from 'cors';
 import fs from 'fs'
 import path from 'path'
 import admin from 'firebase-admin'
@@ -9,6 +9,7 @@ import  {fileURLToPath} from 'url'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
+app.use(cors());
 
     const credentialsFilePath = path.join(__dirname, '..', 'credentials.json');
 const credentials = JSON.parse(fs.readFileSync(credentialsFilePath, 'utf8'));
