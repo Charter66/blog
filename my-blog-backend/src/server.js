@@ -126,7 +126,7 @@ app.delete('/api/articles/:name/comments/:postedBy', async (req, res) => {
     }
 });
 
-const PORT =  3000;
+const PORT =  ;
 
 connectToDb(()=>{
 
