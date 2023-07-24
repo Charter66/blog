@@ -126,7 +126,7 @@ app.delete('/api/articles/:name/comments/:postedBy', async (req, res) => {
     }
 });
 
-const PORT =  "https://main--ephemeral-brigadeiros-4f959a.netlify.app";
+const PORT =  "https://ephemeral-brigadeiros-4f959a.netlify.app/";
 
 connectToDb(()=>{
 
