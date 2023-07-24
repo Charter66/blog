@@ -9,7 +9,6 @@ import  {fileURLToPath} from 'url'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
-app.use(cors());
 
     const credentialsFilePath = path.join(__dirname, '..', 'credentials.json');
 const credentials = JSON.parse(fs.readFileSync(credentialsFilePath, 'utf8'));
@@ -19,6 +18,7 @@ const credentials = JSON.parse(fs.readFileSync(credentialsFilePath, 'utf8'));
         credential : admin.credential.cert(credentials),
     });
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
