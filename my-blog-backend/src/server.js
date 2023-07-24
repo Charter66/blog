@@ -126,7 +126,7 @@ app.delete('https://blog-fze5.onrender.com/api/articles/:name/comments/:postedBy
     }
 });
 
-const PORT =  8000;
+const PORT =  3000;
 
 connectToDb(()=>{
 
