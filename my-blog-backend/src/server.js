@@ -43,7 +43,7 @@ req.user = req.user || {};
     next();
 });
 
-app.get('/api/articles/:name', async(req, res) => {
+app.get('https://blog-fze5.onrender.com/api/articles/:name', async(req, res) => {
     const {name}=req.params;
     const {uid} = req.user;
     
@@ -67,7 +67,7 @@ app.use((req,res,next)=>{
     }
 });
 
-app.put('/api/articles/:name/upvote',  async(req, res)=> {
+app.put('https://blog-fze5.onrender.com/api/articles/:name/upvote',  async(req, res)=> {
     const {name} = req.params;
     const {uid} =req.user;
     const article =await db.collection('articles').findOne({name});
@@ -92,7 +92,7 @@ app.put('/api/articles/:name/upvote',  async(req, res)=> {
 }
 })
 
-app.post('/api/articles/:name/comments', async (req, res)=> {
+app.post('https://blog-fze5.onrender.com/api/articles/:name/comments', async (req, res)=> {
     const {name} = req.params;
     const { text} =req.body;
     const {email} = req.user;
@@ -112,7 +112,7 @@ app.post('/api/articles/:name/comments', async (req, res)=> {
 })
 
 
-app.delete('/api/articles/:name/comments/:postedBy', async (req, res) => {
+app.delete('https://blog-fze5.onrender.com/api/articles/:name/comments/:postedBy', async (req, res) => {
     const {name, postedBy} = req.params;
     const result = await db.collection('articles').updateOne({name}, {
         $pull: {comments: {postedBy}}
