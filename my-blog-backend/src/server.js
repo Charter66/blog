@@ -125,7 +125,7 @@ app.delete('/api/articles/:name/comments/:postedBy', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT =  'https://blog-fze5.onrender.com' || 8000;
 
 connectToDb(()=>{
 
