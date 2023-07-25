@@ -18,9 +18,7 @@ const ArticlePage = () =>{
     const [articleComments, setArticleComments] = useState ([])
     useEffect (() => {
         const loadArticleInfo = async () => {
-        let token = user && await user.getIdToken();
-        const headers = token ? {authToken: token} : {};
-        const response = await axios.get(`https://blog-fze5.onrender.com/api/articles/${articleId}/comments`, {headers})
+        const response = await axios.get(`https://blog-fze5.onrender.com/api/articles/${articleId}/comments`)
         const newArticleComments =response.data;
          setArticleComments(newArticleComments);
          console.log("new",newArticleComments)
@@ -30,7 +28,7 @@ const ArticlePage = () =>{
 
          }
 
-     },[]);
+     },[articleId]);
 
      console.log("article",articleComments)
      useEffect (() => {
