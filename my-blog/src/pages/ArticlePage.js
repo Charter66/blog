@@ -40,7 +40,7 @@ const ArticlePage = () =>{
             const updatedArticle = response.data;
             setArticleInfo(updatedArticle);
      }
-    
+    console.log(articleInfo)
 
      if(!article){
             return <NotFoundPage/>
