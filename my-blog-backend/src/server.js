@@ -43,7 +43,7 @@ req.user = req.user || {};
     next();
 });
 
-app.get('   ', async(req, res) => {
+app.get('/api/articles/:name', async(req, res) => {
     const {name}=req.params;
     const {uid} = req.user;
     

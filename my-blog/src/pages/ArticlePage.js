@@ -16,7 +16,20 @@ const ArticlePage = () =>{
     const article = articles.find(article =>article.name === articleId);
     const {user, isLoading} = useUser();
 
+    useEffect (() => {
+        const loadArticleInfo = async () => {
+        let token = user && await user.getIdToken();
+        const headers = token ? {authToken: token} : {};
+        const response = await axios.get(`/api/articles/${articleId}`, {headers})
+        const newArticleInfo =response.data;
+         setArticleInfo(newArticleInfo);
+        }
+         if(!isLoading){
+            loadArticleInfo()
 
+         }
+
+     },[isLoading, user, articleId]);
      useEffect (() => {
         const loadArticleInfo = async () => {
         let token = user && await user.getIdToken();
