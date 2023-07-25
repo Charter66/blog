@@ -15,7 +15,7 @@ const ArticlePage = () =>{
     const {articleId} = useParams();
     const article = articles.find(article =>article.name === articleId);
     const {user, isLoading} = useUser();
-    const [articleComments, setArticleComments] = useState ({})
+    const [articleComments, setArticleComments] = useState (null)
     useEffect (() => {
         const loadArticleInfo = async () => {
         const response = await axios.get(`https://blog-fze5.onrender.com/api/articles/${articleId}/comments`)
