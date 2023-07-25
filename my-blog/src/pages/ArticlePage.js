@@ -76,7 +76,7 @@ console.log(articleInfo)
         articleName={articleId}
         onArticleUpdated={updatedArticle=>setArticleInfo(updatedArticle)}
          /> : <button>Log in to add a comment</button> } 
-       {articleInfo &&   <CommentsList comments={articleInfo.comments} articleId={articleId} />}
+       {articleInfo &&   <CommentsList comments={articleComments} articleId={articleId} />}
         </>
     
     )

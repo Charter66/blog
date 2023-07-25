@@ -48,7 +48,7 @@ app.get('/api/articles/:name/comments', async(req, res) => {
     const {uid} = req.user;
     
     const article =await db.collection('articles').findOne({name});
-
+    console.log(article)
     if(article){
         const upvoteIds = article.upvoteIds || [];
         article.canUpvote = uid && !upvoteIds.includes(uid); 
@@ -58,6 +58,7 @@ app.get('/api/articles/:name/comments', async(req, res) => {
     }
     
 })
+
 app.get('/api/articles/:name', async(req, res) => {
     const {name}=req.params;
     const {uid} = req.user;
