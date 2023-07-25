@@ -23,13 +23,16 @@ const ArticlePage = () =>{
         const response = await axios.get(`/api/articles/${articleId}`, {headers})
         const newArticleInfo =response.data;
          setArticleInfo(newArticleInfo);
+         console.log("new",newArticleInfo)
         }
          if(!isLoading){
             loadArticleInfo()
 
          }
 
-     },[isLoading, user, articleId]);
+     },[]);
+
+     console.log(articleInfo)
      useEffect (() => {
         const loadArticleInfo = async () => {
         let token = user && await user.getIdToken();

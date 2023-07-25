@@ -1,6 +1,6 @@
 
 
-const CommentsList = ({comments, articleId}) => {
+const CommentsList = ({comments}) => {
   
     
 
