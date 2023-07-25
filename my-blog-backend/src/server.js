@@ -43,6 +43,21 @@ req.user = req.user || {};
     next();
 });
 
+app.get('/api/articles/:name/comments', async(req, res) => {
+    const {name}=req.params;
+    const {uid} = req.user;
+    
+    const article =await db.collection('articles').findOne({name});
+
+    if(article){
+        const upvoteIds = article.upvoteIds || [];
+        article.canUpvote = uid && !upvoteIds.includes(uid); 
+        res.json(article)
+    } else {
+        res.sendStatus(404).send('Article not found')
+    }
+    
+})
 app.get('/api/articles/:name', async(req, res) => {
     const {name}=req.params;
     const {uid} = req.user;

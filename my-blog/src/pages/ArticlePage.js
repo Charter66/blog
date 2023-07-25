@@ -15,15 +15,15 @@ const ArticlePage = () =>{
     const {articleId} = useParams();
     const article = articles.find(article =>article.name === articleId);
     const {user, isLoading} = useUser();
-
+    const [articleComments, setArticleComments] = useState ([])
     useEffect (() => {
         const loadArticleInfo = async () => {
         let token = user && await user.getIdToken();
         const headers = token ? {authToken: token} : {};
-        const response = await axios.get(`/api/articles/${articleId}`, {headers})
-        const newArticleInfo =response.data;
-         setArticleInfo(newArticleInfo);
-         console.log("new",newArticleInfo)
+        const response = await axios.get(`https://blog-fze5.onrender.com/api/articles/${articleId}/comments`, {headers})
+        const newArticleComments =response.data;
+         setArticleComments(newArticleComments);
+         console.log("new",newArticleComments)
         }
          if(!isLoading){
             loadArticleInfo()
@@ -32,7 +32,7 @@ const ArticlePage = () =>{
 
      },[]);
 
-     console.log(articleInfo)
+     console.log("article",articleComments)
      useEffect (() => {
         const loadArticleInfo = async () => {
         let token = user && await user.getIdToken();
