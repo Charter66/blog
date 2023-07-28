@@ -46,6 +46,7 @@ const ArticlePage = () =>{
 
      },[isLoading, user, articleId]);
 console.log(articleInfo)
+
      const addUpvote = async () => {
             const token = user && await user.getIdToken();
             const headers = token ? {authToken: token} : {};
