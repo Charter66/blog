@@ -19,7 +19,7 @@ const AboutPage = () => {
             consequat quam. Vivamus accumsan dui in facilisis aliquet.,
         </p>
         <p>
-            Etiam neceeeee lec btus urna. Sed sodales ultrices dapibus. 
+            Etiam neceeeee lec btus urna. assaSed sodales ultrices dapibus. 
             Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
             nisi. Nunc vel pulvinasadasr diam. Nam eleifend egestas viverra. Donec finibus lectus 
             sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
