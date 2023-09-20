@@ -3,7 +3,7 @@ const articles = [
         name: 'learn-react',
         title: 'The Fastest Way to Learn React',
         content: [
-            `Welcome!Todaay we're going to be talking about the fastest way to
+            `Welcome!Todaay we're goingwdsa to be talking about the fastest way to
             learn React. We'll be discussing some topics such as proin congue
             ligula id risus posuere, vel eleifend ex egestas. Sed in turpis leo. 
             Aliquam malesuadsa in massa tincidunt egestas. Nam consectetur varius turpis, 
